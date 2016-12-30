@@ -1,0 +1,65 @@
+<!doctype html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	 $("#sub").click(function(){
+         var abc=$("#inp").val();
+        $.ajax({
+    type: 'get',
+    
+    url:abc,
+    
+    complete: function(resp){
+        $("#result").append(resp.getAllResponseHeaders());
+    }
+});
+});});
+</script>
+
+<style>
+.mid{display:flex; margin:2px;}
+.left{border-right:2px solid black;
+       padding-right: 30px;}
+ #inp{width:auto;
+ 	padding:5px 5px;
+ 	margin:15px;display: inline-block;
+ }
+   #buttom{background-color: black;color: white;height:30px;text-align: center;padding:10px 0px;margin:5px;
+   	 position: fixed;
+    bottom: 0;width:100%;display: inline-block;
+
+   }  
+    
+
+</style>
+
+
+
+</head>
+
+
+<body>
+<div style="background-color: black;color: white;height:60px;text-align: center;">
+<h1>Get HTTP Headers</h1>
+</div>
+<div class="mid">
+	<div class="left">
+	ipsum loreum ipsum</br>	ipsum loreum ipsum</br>ipsum loreum ipsum</br>ipsum loreum ipsum</br>ipsum loreum ipsum</br>ipsum loreum ipsum</br>
+	</div>
+	<div style="margin:auto;">
+		<form >
+		<input type="text" name="text" placeholder="enterurl" id="inp"></input>
+		<input type="button" name="send" value="submit" id="sub" ></input>
+		</form>
+		
+	</div>
+
+</div><div id="result" style="max-width:150px;margin:auto;color: white;background-color: black">
+	<h6>RESULT</h6>
+</div>
+<div id="buttom" >
+Copyright @innoraft.com
+</div>
+</body>
